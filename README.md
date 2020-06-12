@@ -3,7 +3,7 @@
 
 # How to use  
 Both derived your own Node implements INode and your own graph implements IGraph,  
-then just call astar.Search(yourGraph, yourStartNode, yourGoalNode) and it'll find no more than one result.
+then just call astar.Search(yourGraph, yourStartNode, yourGoalNode) and it'll find no more than one result.  
 NOTE:the result includes both startNode and goalNode!  
 
 # The sample
@@ -14,8 +14,8 @@ Those operations can be done in runtime, so you can see the result conveniently.
 
 A*算法的学习和实现。继承INode和IGraph接口实现自己所需要的数据，就可以调用AStar.Search(graph, start, goal)进行搜索了。  
 寻路示例实现了一个网格地图的寻路，可以在运行过程中拖动start/goal节点来重新设置它们，点击地图格子将其设置障碍物或普通格子，  
-动态改变地图的宽高。然后就可以看到A*的寻路结果了。控制台有打印A*查找过的节点个数。　　
-```
+动态改变地图的宽高。然后就可以看到A*的寻路结果了。控制台有打印A*查找过的节点个数。  
+
 A*是由图的广度优先搜索演变而来的，由于广度优先搜索是均匀遍历图的所有节点，所以比较耗时。然后给地图节点加上权重后，就演变成了迪杰斯特拉算法，　　
 它会优先根据当前搜索节点到起始点的最小权重去扩散搜索，而不是均匀扩散搜索。这样相对广度优先搜索就少搜索一些节点了，但速度仍较慢。然后有一个
 Greedy-Best-First-Search启发式搜索，它是根据当前节点到目标节点的预估值（离目标点越近，值越小），因此它只朝着那些离目标点“更近”的节点　　
